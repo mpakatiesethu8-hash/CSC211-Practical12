@@ -68,3 +68,27 @@ public class timeMethods {
             runTime += time;
             runTime2 += (time * time);
         }
+    aveRuntime = runTime / repetitions;
+        stdDeviation =
+                Math.sqrt(runTime2 - repetitions * aveRuntime * aveRuntime)
+                        / (repetitions - 1);
+
+        System.out.println("BINARY SEARCH STATISTICS");
+        System.out.println("________________________________________________");
+        System.out.println("Average time = "
+                + fiveD.format(aveRuntime / 1000) + "s");
+        System.out.println("Standard deviation = "
+                + fourD.format(stdDeviation) + " ms");
+        System.out.println("n = " + n);
+        System.out.println("________________________________________________");
+    }
+
+
+    static int linearsearch(int[] arr, int key) {
+
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] == key)
+                return i;
+        }
+        return -1;
+    }
